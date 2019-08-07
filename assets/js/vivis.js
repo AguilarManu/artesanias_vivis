@@ -7,8 +7,13 @@ $(document).ready(function() {
 	var modulo = $('body input[name=modulo]').val();
 	(modulo != 'inicio') ? (ruta = '../') : (ruta = '');
 
-	/*CAMBIAR EL BACKGROUND DEL #home cuando está en /about*/
-
+	/*CAMBIAR EL BACKGROUND DEPENDIENDO DE CADA MÓDULO*/
+	if (modulo == 'about')
+		$("#home").css("background", "url('../assets/images/msj/2019-07-24-9_26_56.jpeg') no-repeat center center");
+	if (modulo == 'products')
+		$("#home").css("background", "url('../assets/images/msj/2019-07-24-9_27_26.jpeg') no-repeat center center");
+	$('#home').css('background-size', 'cover');
+	$('#home').css('display','flex');
 
 	/*CARGAR HEADER*/
 	$(".menu_content").load(ruta+"assets/layauts/header.html", function(response, status, http){
